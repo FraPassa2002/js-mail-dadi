@@ -17,38 +17,46 @@ Gioco dei dadi
 */
 
 
-//  MAIL   //
+//  EMAIL   //
 
 // - Chiedi all'utente la sua email,
-const email = document.getElementById('email');
-console.log('email', email, typeof email);
+const userEmail = prompt('Inserisci la tua Email:');
+console.log('userEmail', userEmail, typeof userEmail);
 
 
 // - controlla che sia nella lista di chi può accedere,
 
     // - creazione della lista
 
-const verifiedEmails = [
-    '@hotmail.it', //0
-    '@hotmail.com', //1
-    '@outlook.it', //2
-    '@gmail.com', //3
-    '@yahoo.com' //4
+
+const validEmails = [
+    'a@a.a',
+    'b@b.b', 
+    'c@c.c' 
 ];
 
-console.log('verifiedEmails', verifiedEmails, verifiedEmails.length, typeof verifiedEmails);
+console.log('validEmails', validEmails, typeof validEmails);
 
+let canEnter = false;
 
-let i = 0;
-console.log('L\'elemento in posizione' + i + 'è:', verifiedEmails[i]);
-i++;
-console.log('L\'elemento in posizione' + i + 'è:', verifiedEmails[i]);
-i++;
-console.log('L\'elemento in posizione' + i + 'è:', verifiedEmails[i]);
-i++;
-console.log('L\'elemento in posizione' + i + 'è:', verifiedEmails[i]);
-i++;
-console.log('L\'elemento in posizione' + i + 'è:', verifiedEmails[i]);
-i++;
+for (let i = 0; i < validEmails.length; i++) {
+    // console.log(i, validEmails[i]);
 
+    if (validEmails[i] == userEmail) {
+        // alert('Puoi entrare');
 
+        canEnter = true;
+
+        //stoppo il ciclo
+        i = validEmails.length;
+    }
+}
+
+if (canEnter == false) {
+    alert('Non puoi entrare');
+}
+else {
+    alert('Puoi entrare');
+}
+
+/////////////// FINE ///////////////////
